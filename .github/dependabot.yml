@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # The package manager type (e.g., "npm", "maven", "pip", etc.)
+    directory: "/" # The directory where your package manifests are located
+    schedule:
+      interval: "weekly" # How often to check for updates ("daily", "weekly", "monthly")
+    open-pull-requests-limit: 5 # The maximum number of open pull requests Dependabot should have at any time
+    ignore: # Optional: Specify dependencies to ignore
+      - dependency-name: "express"
+        versions: ["4.16.4"]
+
+# add a new entry for the Python package manager
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "requests"
+        versions: ["2.25.0"]
